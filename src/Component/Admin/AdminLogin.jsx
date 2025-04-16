@@ -37,12 +37,14 @@ function AdminLogin() {
           </button>
 
           {/* Logo*/}
-          <div className='flex justify-center mb-8'>
+          <div className='flex justify-center mb-2'>
             <img src={Logo} className='h-7' />
           </div>
           
+          <p className='text-center text-gray-500 font-bold'>Sign in as Admin</p>
+
           {/* From Container */}
-          <form  onSubmit={handleSbmit}>
+          <form  onSubmit={handleSbmit} className='mt-6'>
             <input
               type='text'
               placeholder='Username'

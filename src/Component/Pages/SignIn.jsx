@@ -28,7 +28,7 @@ function SignIn() {
       storedUser.password === passwordInput
     ) {
           setSuccess("Sign In successfully!")
-          // navigate("/");
+          navigate("home");
       }else{
         setError("Invalid credentials")
       }
