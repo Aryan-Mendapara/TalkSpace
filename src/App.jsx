@@ -4,8 +4,12 @@ import SignIn from './Component/Pages/SignIn'
 import AdminLogin from './Component/Admin/AdminLogin'
 import SignUp from './Component/Pages/SignUp'
 import ProtectedRoutes from './Component/Routes/ProtectedRoutes'
-import Home from './Component/Pages/Home'
+import HomePages from './Component/Pages/Home'
 import Layout from './Component/Utils/Layout'
+import ProfilePage from './Component/LeftSidePages/ProfilePage'
+import SavePage from './Component/LeftSidePages/SavePage'
+import FollowingPage from './Component/LeftSidePages/FollowingPage'
+import Communities from './Component/LeftSidePages/Communities'
 
 function App() {
   return (
@@ -24,7 +28,11 @@ function App() {
               <ProtectedRoutes>
                 <Layout>
                   <Routes>
-                    <Route path='home' element={<Home/>} />
+                    <Route path='home' element={<HomePages />} />
+                    <Route path='profile' element={<ProfilePage />} />
+                    <Route path='saved' element={<SavePage />} />
+                    <Route path='following' element={<FollowingPage />} />
+                    <Route path='communities' element={<Communities />} />
                   </Routes>
                 </Layout>
               </ProtectedRoutes>
