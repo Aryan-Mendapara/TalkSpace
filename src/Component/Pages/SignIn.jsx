@@ -38,9 +38,10 @@ function SignIn() {
   return (
     <div className='flex justify-center items-center w-screen h-screen bg-gray-100'>
       <div className='relative bg-white p-12 rounded-lg shadow-xl w-[28rem] h-[32rem] text-center'>
-        <div className='flex justify-center mb-8'>
-          <img src={Logo} className='h-7' />
-        </div>
+        <h1 className="text-4xl font-bold mb-6">
+          <span className="text-blue-500">Talk</span>
+          <span className="text-black">Space</span>
+        </h1>
 
         {/* Toggle Button */}
         <div className="flex border-b border-gray-300 mb-6">

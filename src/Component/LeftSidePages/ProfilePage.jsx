@@ -21,8 +21,8 @@ const ProfilePage = () => {
       const data = await res.json();
       setUserData(data);
       setBio(data.bio || "");
-      setLocation(data.location || "")
-      setInterests(data.interests?.json(",") || "")
+      setLocation(data.location || "");
+      setInterests(data.interests?.join(", ") || "");
     };
 
     fetchUser();
@@ -30,9 +30,9 @@ const ProfilePage = () => {
 
   const handleCancel = () => {
     setIsEditing(false);
-    setBio(data.bio || "");
-    setLocation(data.location || "");
-    setInterests(userData.interests?.json(",") || "");
+    setBio(userData.bio || "");
+    setLocation(userData.location || "");
+    setInterests(userData.interests?.join(", ") || "");
   }
 
   const handleUpdate = async () => {
@@ -55,16 +55,16 @@ const ProfilePage = () => {
       const updated = await res.json();
       if (res.ok) {
         setUserData(updated);
-        setIsEditing(updated);
+        setIsEditing(false);
       } else {
-        alert(updated.message || "Update failed")
+        alert(updated.message || "Update failed");
       }
     } catch (err) {      
-      alert("Error updating profile",err);
+      alert("Error updating profile", err);
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   return (
     <>
@@ -135,14 +135,14 @@ const ProfilePage = () => {
                 />
               ) : userData.interests && userData.interests.length > 0 ? (
                 <div className="flex flex-wrap gap-2 mt-1 font-bold">
-                  {userData.interests.map((interest, index) => {
+                  {userData.interests.map((interest, index) => (
                     <span
                       key={index}
                       className="text-sm text-gray-600 border border-gray-300 px-2 py-1 rounded-md"
                     >
                       {interest}
                     </span>
-                  })}
+                  ))}
                 </div>
               ) : (
                 <p className="text-gray-600 text-sm mt-1">
