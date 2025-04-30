@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Logo from "../../assets/img/SocialEcho.jpg"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signUp } from '../../slice/authSlice';
@@ -43,9 +42,11 @@ function SignUp() {
     return (
         <div className='flex justify-center items-center w-screen h-screen bg-gray-100'>
             <div className='relative bg-white p-12 rounded-lg shadow-xl w-[28rem] h-[32rem] text-center'>
-                <div className='flex justify-center mb-8'>
-                    <img src={Logo} className='h-7' />
-                </div>
+                {/* Logo */}
+                <h1 className="text-4xl font-bold mb-6">
+                    <span className="text-blue-500">Talk</span>
+                    <span className="text-black">Space</span>
+                </h1>
 
                 {/* Toggle Button */}
                 <div className="flex border-b border-gray-300 mb-6">
@@ -85,7 +86,7 @@ function SignUp() {
                             required
                             className='w-full p-4 mb-4 border border-gray-300 rounded-lg focus:border-blue-600 focus:ring focus:ring-blue-200'
                         />
-                        <button className='w-full p-4 mb-6 bg-blue-500 text-white border border-gray-300 rounded-lg'
+                        <button className='w-full p-4 mb-4 bg-blue-500 text-white border border-gray-300 rounded-lg'
                             type='submit'>
                             Sing Up
                         </button>

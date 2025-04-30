@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Logo from "../../assets/img/SocialEcho.jpg"
 import { FaUserCircle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { FiLogOut } from 'react-icons/fi';
