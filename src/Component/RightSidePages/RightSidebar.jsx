@@ -25,7 +25,7 @@ const RightSidebar = () => {
         {
           headers: { Authorization: `Bearer ${token}`},
         }
-      );
+      );  
     } catch (error) {
       
     }
